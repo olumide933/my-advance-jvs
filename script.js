@@ -83,13 +83,13 @@
 //     console.log('Error handlig complete')
 // }
 
-console.log('I am the first guy')
+// console.log('I am the first guy')
 
-setTimeout(()=>{
-    console.log('I am the second guy')
-}, 2000)
+// setTimeout(()=>{
+//     console.log('I am the second guy')
+// }, 2000)
 
-console.log('I am the third guy')
+// console.log('I am the third guy')
 
 
 // function fetchData(callback){
@@ -105,3 +105,65 @@ console.log('I am the third guy')
 //         console.log('data has been dispayed')
 //     }, 1000)
 // })
+
+
+// const fetchData = async()=>{
+//     try{
+//         let response = await fetch('https://jsonplaceholder.typicode.com/posts')
+//         let data =await response.json()
+//         console.log(data)
+
+//     }catch (error) {
+//         console.log('Error getting data', error)
+//     }
+// }
+// fetchData()
+
+// Asynchronous js
+
+// console.log('first to display')
+//  setTimeout(()=>{
+//     console.log('last person to display')
+// },1000)
+// console.log('second persn to display')
+
+// synchronous
+
+// function fetchData(callback){
+//     setTimeout(()=>{
+//         console.log('first')
+//         callback()
+//     },2000)
+// }
+// fetchData(()=>{
+//     console.log('second display')
+//     setTimeout(()=>{
+//         console.log('last to display')
+//     },1000)
+// })
+
+// const myPromise =new Promise((resolved, reject)=>{
+//     let success = false
+//     setTimeout(()=>{
+//         if(success){
+//             resolved('promse rsolved')
+//         }else{
+//             reject('promise rejected')
+//         }
+//     },2000)
+// })
+
+// myPromise.then((result)=>{return console.log(result)})
+// myPromise.catch((error)=>{return console.log(error)})
+
+const fetchData= async ()=>{
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/users')
+    let data = await response.json()
+    console.log(data)
+    } catch (error) {
+        console.log('Error fetching Data', error)
+
+         }
+}
+fetchData()
